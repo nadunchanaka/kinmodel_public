@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <!-- <include file="$(find stear_pot_data)/launch/stearPot.launch"/> -->
+
+    <node pkg="kin_model" type="xz_publisher.py" name="xz_publisher">
+    </node>
+
+    <node pkg="kin_model" type="drivewheel.py" name="drivewheel">
+        <param name="port" value="/dev/RS485_232"/>
+        <param name="baud" value="115200"/>
+    </node>
+
+</launch>
